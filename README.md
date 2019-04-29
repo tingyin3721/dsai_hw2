@@ -1,42 +1,35 @@
-# Peak Load Forecasting
+# Addition / Subtraction / Multiplication
 
-Jupyter Notebook https://nbviewer.jupyter.org/gist/tingyin3721/607d713b9c78e5ee064875d5edecdfc5
+## 1. Description
+ - Adder (A,B: 3 digits)
+ - Subtractor (A-B, A>=B)
+ - Combine adder and subtractor (A+B-C or A-B+C)
+ - Multiplier (A,B: 3 digits)
+ - **Analyze the results under training epoch, training size, different number of digits, more input number**
 
-## 1. Overview
-根據台電歷史資料，預測未來七天的"電力尖峰負載"(MW)。
+## 2. Flow
+**Data Representation**
+ - char vocabulary : "0,1,2,3,4,5,6,7,8,9,+/-,' '"
+ - length of the sequence
+ - one-hot encoding
+ - digital-token decoding
+**Data Generation**
+ - Generate some question-answer pairs for training and validating.
+ - Questions : ['125+496', '23+987', '178+63', '45+12', '86+613']
+ - Answer :    ['621', '1010', '241', '57', '699']
+**Feature Engineering**
+ - Transfer the training sets to one-hot representation.
+ - 
+**Get Training Data and Validation Data**
+ - Total data = 50000, 45000 for training, 5000 for validation
+**Build Model**
+ - Implement with LSTM
+ - Hidden Layers = 128
+ - 
+**String Matching**
 
-## 2. Goal
-預測 2019/4/2 ~ 2019/4/8 的每日"電力尖峰負載"(MW)
+
+## 3. Result
 
 
-## 3. 使用資料
- - [台灣電力公司_過去電力供需資訊](https://data.gov.tw/dataset/19995)
- - [今日預估尖峰備轉容量率](https://www.taipower.com.tw/d006/loadGraph/loadGraph/load_reserve_.html)
- - [中華民國一百零六年政府行政機關辦公日曆表](https://www.dgpa.gov.tw/information?uid=2&pid=4293)
- - [中華民國一百零七年政府行政機關辦公日曆表](https://www.dgpa.gov.tw/information?uid=83&pid=7473)
- - [中華民國108年（西元2019年）政府行政機關辦公日曆表](https://www.dgpa.gov.tw/information?uid=83&pid=8150)
- 
- 
-## 4. 預測方法
-使用 Ensemble Linear Regression進行訓練後預測
- - **1st Regression**
- - Input : 前60 天的每日尖峰負載
- - Predict : 接下來 7 天的每日尖峰負載
- - Training Data : 755
- - Method : sklearn linear regression
- - **2nd Regression**
- - Input : 前兩年所有連假的尖峰負載預測結果
- - Predict : 利用第一次預測結果和真正數值去學習連假的fine-tune regression
- - Training Data : 126
- - Method : sklearn linear regression
- 
-
-## 5. 檔案說明
- - data.csv: 所有CSV資料
- - regression.py: 訓練過程.py
- - forecasting_model.m: 1st Regression 訓練模型
- - forecasting_model2.m: 2nd Regression 訓練模型
- - app.py: 讀取訓練模型並進行 2019/4/2 ~ 2019/4/8 預測，並將結果存到 submission.csv
- 
- 
- 
+## 4. 檔案說明
