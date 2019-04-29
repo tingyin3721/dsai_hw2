@@ -13,19 +13,24 @@
  - length of the sequence
  - one-hot encoding
  - digital-token decoding
+
 **Data Generation**
  - Generate some question-answer pairs for training and validating.
  - Questions : ['125+496', '23+987', '178+63', '45+12', '86+613']
  - Answer :    ['621', '1010', '241', '57', '699']
+
 **Feature Engineering**
  - Transfer the training sets to one-hot representation.
  - 
+
 **Get Training Data and Validation Data**
  - Total data = 50000, 45000 for training, 5000 for validation
+
 **Build Model**
  - Implement with LSTM
  - Hidden Layers = 128
  - 
+
 **String Matching**
 
 
