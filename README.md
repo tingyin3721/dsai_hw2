@@ -64,7 +64,7 @@
  **Addition or Subtraction**
  - Addition 和 Subtraction 的架構皆是使用 LSTM 作 encode，再使用 RepeatVector 將 output 重複4次之後輸入第二個 LSTM 作 decode
  - 從結果可以觀察到 Addition 和 Subtraction 不論使用多少 batch size 和 epoch 訓練，測試精準度都非常高，在 1000 筆的測試資料中都可以達到 99% 以上的精準度；而當輸入數值為四位數字或輸入三個三位數字時，測試精準度也大多在接近 99% 的數值。
- - Subtraction_rnn.ipynb 為了節省篇幅而沒有將每個 Epoch 的資料打印出來，但從每個 Epoch 逐步上升的 Training accuracy 和 Validation accuracy 還是可以看到訊模行正在順利收斂
+ - Subtraction_rnn.ipynb 為了節省篇幅而沒有將每個 Epoch 的資料打印出來，但從每個 Epoch 逐步上升的 Training accuracy 和 Validation accuracy 還是可以看到模型正在順利收斂
  
  **Addition and Subtraction Combine**
  - 混合了加法器和減法器的實現 (Combine)，若使用和 Addition 方法相同架構訓練，精準度最高只到 76%
