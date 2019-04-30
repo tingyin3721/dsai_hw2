@@ -67,7 +67,7 @@
  
  **Addition and Subtraction Combine**
  - 混合了加法器和減法器的實現 (Combine)，若使用和 Addition 方法相同架構訓練，精準度最高只到 76%
- - 因此，Combine 的架構略為經過修改，經過 LSTM encode 之後，透過 dense 將資料特徵量變成 (4*hidden_layer數)，再 resize 成 (4, hidden_layer)，輸入 decode 的 LSTM 中(詳細架構可以看 Addition_Subtraction_rnn.ipynb)
+ - 因此，Combine 的架構稍作修改，input 經過 LSTM encode 之後，透過 dense 將資料特徵量變成 (4*hidden_layer數)，再 resize 成 (4, hidden_layer)，輸入 decode 的 LSTM 中(詳細架構可以看 Addition_Subtraction_rnn.ipynb)
  - 經過修改之後的架構，在加法減法混合的資料中，Validation 精準度可以大於 97%，Testing 精準度也可以大於 90%
  - 從 Training Epoch 可以觀察到，加減混合的資料集較為複雜，需要訓練較多次模型才會完全收斂，在實驗中訓練了 200 個 Epoch，相較 Addition 或 Subtraction 的 100 個 Epoch 多了一倍
  
