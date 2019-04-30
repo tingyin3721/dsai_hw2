@@ -58,18 +58,18 @@
 ## 3. Result
  - The result for Addition, Subtraction, Combine addition and subtraction
  ![](1.png)
- - The result for multiplication:
-  - Validation Accuracy :
-  - Testing Accuracy : 
+ - The result for multiplication: Validation Accuracy = Testing Accuracy =  
   
 ## 4. 討論
  **Addition / Subtraction**
  - Addition和Subtraction的架構皆是使用LSTM作encode，再使用RepeatVector將output重複4次之後輸入第二個LSTM作decode
  - 從結果可以觀察到Addition和Subtraction不論使用多少batch size和epoch訓練，測試精準度都非常高，在1000筆的測試資料中都可以達到99%以上的精準度；而當輸入數值為四位數字或輸入三個三位數字時，測試精準度也大多在接近99%的數值。
+ 
  **Addition and Subtraction Combine**
  - 混合了加法器和減法器的實現(Combine)，若使用和Addition方法相同架構訓練，精準度最高只到76%
  - 因此，Combine的架構略為經過修改，經過LSTM encode之後，透過dense將資料特徵量變成(4*hidden_layer數)，再resize成(4, hidden_layer)，輸入decode的LSTM中(詳細架構可以看Addition_Subtraction_rnn.ipynb)
  - 經過修改之後的架構，在加法減法混合的資料中，Validation精準度可以大於97%，Testing精準度也可以大於90%
+ 
  **Multiplication**
  - 同樣的架構應用在乘法器上效果明顯比較不好，可能因為乘法的運算較複雜，LSTM擬合的結果較不好，精準度只達76%左右
 
