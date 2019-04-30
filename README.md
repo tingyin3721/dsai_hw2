@@ -57,7 +57,7 @@
 
 ## 3. Result
  - The result for Addition, Subtraction, Combine addition and subtraction
- ![](1.png)
+ ![](Result.png)
  - The result for multiplication: Validation Accuracy = Testing Accuracy =  
   
 ## 4. 討論
