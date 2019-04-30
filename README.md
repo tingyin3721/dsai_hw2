@@ -4,7 +4,7 @@
  - Addition : https://nbviewer.jupyter.org/gist/tingyin3721/aad44ae50a470afc42a2ce7eafbea208
  - Subtraction : https://nbviewer.jupyter.org/gist/tingyin3721/34894154b47aa9c3522e9d0509b5f578
  - Addition_Subtraction_Combine : https://nbviewer.jupyter.org/gist/tingyin3721/241a06e2c2f94db6b754f1ec24df8772
- - Multiplication : 
+ - Multiplication : https://nbviewer.jupyter.org/gist/tingyin3721/21aa9260df7246e5f4d5aa3cb033278b
 
 ## 1. Description
  - Adder (A,B: 3 digits)
@@ -72,7 +72,8 @@
  - 從 Training Epoch 可以觀察到，加減混合的資料集較為複雜，需要訓練較多次模型才會完全收斂，在實驗中訓練了 200 個 Epoch，相較 Addition 或 Subtraction 的 100 個 Epoch 多了一倍
  
  **Multiplication**
- - 同樣的架構應用在乘法器上效果明顯比較不好，可能因為乘法的運算較複雜，LSTM 擬合的結果較不好，精準度只達 76% 左右
+ - Batch size = 128, Epoch = 200
+ - 同樣的架構應用在乘法器上效果明顯比較不好，可能因為乘法的運算較複雜，LSTM 擬合的結果較不好，Validation精準度只達 78.99%，Testing精準度只達 0.684
 
 ## 5. 檔案說明
  - addition_rnn.ipynb : 實現加法器
