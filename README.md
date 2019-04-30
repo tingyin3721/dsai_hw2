@@ -52,8 +52,8 @@
  - 1.1 實驗使用不同的epoch和batch size訓練 (with batch size = 64, epoch = 100)
  - 1.2 實驗使用不同的epoch和batch size訓練 (with batch size = 256, epoch = 100)
  - 1.3 實驗使用不同的epoch和batch size訓練 (with batch size = 128, epoch = 200)
- - 2. 實驗不同位數的數字 (The digits of input number = 4)
- - 3. 多組數字共同運算 (Add 3 numbers (each number has 3 digits) together)
+ - 2.0 實驗不同位數的數字 (The digits of input number = 4)
+ - 3.0 多組數字共同運算 (Add 3 numbers (each number has 3 digits) together)
 
 ## 3. Result
  - The result for Addition, Subtraction, Combine addition and subtraction
@@ -61,17 +61,17 @@
  - The result for multiplication: Validation Accuracy = Testing Accuracy =  
   
 ## 4. 討論
- **Addition / Subtraction**
- - Addition和Subtraction的架構皆是使用LSTM作encode，再使用RepeatVector將output重複4次之後輸入第二個LSTM作decode
- - 從結果可以觀察到Addition和Subtraction不論使用多少batch size和epoch訓練，測試精準度都非常高，在1000筆的測試資料中都可以達到99%以上的精準度；而當輸入數值為四位數字或輸入三個三位數字時，測試精準度也大多在接近99%的數值。
+ **Addition or Subtraction**
+ - Addition 和 Subtraction 的架構皆是使用 LSTM 作 encode，再使用 RepeatVector 將 output 重複4次之後輸入第二個 LSTM 作 decode
+ - 從結果可以觀察到 Addition 和 Subtraction 不論使用多少 batch size 和 epoch 訓練，測試精準度都非常高，在 1000 筆的測試資料中都可以達到 99% 以上的精準度；而當輸入數值為四位數字或輸入三個三位數字時，測試精準度也大多在接近 99% 的數值。
  
  **Addition and Subtraction Combine**
- - 混合了加法器和減法器的實現(Combine)，若使用和Addition方法相同架構訓練，精準度最高只到76%
- - 因此，Combine的架構略為經過修改，經過LSTM encode之後，透過dense將資料特徵量變成(4*hidden_layer數)，再resize成(4, hidden_layer)，輸入decode的LSTM中(詳細架構可以看Addition_Subtraction_rnn.ipynb)
- - 經過修改之後的架構，在加法減法混合的資料中，Validation精準度可以大於97%，Testing精準度也可以大於90%
+ - 混合了加法器和減法器的實現 (Combine)，若使用和 Addition 方法相同架構訓練，精準度最高只到 76%
+ - 因此，Combine 的架構略為經過修改，經過 LSTM encode 之後，透過 dense 將資料特徵量變成 (4*hidden_layer數)，再 resize 成 (4, hidden_layer)，輸入 decode 的 LSTM 中(詳細架構可以看 Addition_Subtraction_rnn.ipynb)
+ - 經過修改之後的架構，在加法減法混合的資料中，Validation 精準度可以大於 97%，Testing 精準度也可以大於 90%
  
  **Multiplication**
- - 同樣的架構應用在乘法器上效果明顯比較不好，可能因為乘法的運算較複雜，LSTM擬合的結果較不好，精準度只達76%左右
+ - 同樣的架構應用在乘法器上效果明顯比較不好，可能因為乘法的運算較複雜，LSTM 擬合的結果較不好，精準度只達 76% 左右
 
 ## 5. 檔案說明
  - addition_rnn.ipynb : 實現加法器
