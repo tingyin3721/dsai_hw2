@@ -57,7 +57,7 @@
 
 ## 3. Result
  - The result for Addition, Subtraction, Combine addition and subtraction
- ![](E:\Desktop\1.png)
+ ![](1.png)
  - The result for multiplication:
   - Validation Accuracy :
   - Testing Accuracy : 
