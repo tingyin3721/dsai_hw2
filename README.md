@@ -58,7 +58,7 @@
 ## 3. Result
  - The result for Addition, Subtraction, Combine addition and subtraction
  ![](Result.png)
- - The result for multiplication: Validation Accuracy = Testing Accuracy =  
+ - **The result for multiplication: Validation Accuracy = 0.7899, Testing Accuracy = 0.684**
   
 ## 4. 討論
  **Addition or Subtraction**
